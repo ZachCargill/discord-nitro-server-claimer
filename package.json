@@ -1,0 +1,81 @@
+{
+  "name": "radar-discord",
+  "productName": "radar-discord",
+  "version": "1.0.0",
+  "description": "Radar Scripts Autoclicker | A program to automatically accept discord invites, nitro gifts and open links",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "dist": "electron-builder -wml"
+  },
+  "keywords": [],
+  "author": "Sandal#5052",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "radar-discord",
+            "icon": "assets/logo.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ],
+          "config": {
+            "name": "radar-discord",
+            "icon": "assets/logo.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bulma": "^0.9.0",
+    "clear": "^0.1.0",
+    "discord": "^0.8.2",
+    "discord.js": "^11.6.4",
+    "edit-json-file": "^1.4.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^6.0.0",
+    "figlet": "^1.5.0",
+    "inquirer": "^7.3.3",
+    "os": "^0.1.1",
+    "performance": "^1.4.0",
+    "request": "^2.88.2",
+    "shell": "^0.5.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.52",
+    "@electron-forge/maker-deb": "6.0.0-beta.52",
+    "@electron-forge/maker-rpm": "6.0.0-beta.52",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.52",
+    "@electron-forge/maker-zip": "6.0.0-beta.52",
+    "electron": "9.1.1"
+  },
+  "build": {
+    "appId": "com.jazi.quickstart",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/logo.png"
+    }
+  }
+}
